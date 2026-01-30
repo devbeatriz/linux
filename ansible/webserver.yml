@@ -1,0 +1,20 @@
+- name: Setting up a web server
+  hosts: ubuntu
+  become: true
+
+  tasks:
+    - name: Install nginx
+      package:
+        name: nginx
+        state: present
+    
+    - name: Start and enable nginx
+      service:
+        name: nginx
+        state: started
+        enabled: true
+    
+    - name: Create index.html
+      copy:
+        content: "Server managed by Ansible\n"
+        dest: /var/www/html/index.html
