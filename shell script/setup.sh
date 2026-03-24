@@ -13,13 +13,13 @@ case "$ID" in
     dnf install -y epel-release
     crb enable
     PM="dnf install -y"
-    PKG_LIST="nmap-ncat bind-utils net-tools traceroute htop wget mlocate"
+    PKG_LIST="nmap-ncat bind-utils net-tools traceroute mtr tcpdump htop wget mlocate"
     LIST_CMD="dnf list installed"
     ;;
   ubuntu|debian)
     apt update
     PM="apt install -y"
-    PKG_LIST="ncat dnsutils net-tools traceroute htop wget plocate"
+    PKG_LIST="ncat dnsutils net-tools traceroute mtr-tiny tcpdump htop wget plocate"
     LIST_CMD="dpkg -l"
     ;;
   *)
